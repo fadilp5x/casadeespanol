@@ -22,7 +22,7 @@
     <meta property="twitter:url" content="https://www.casadeespanol.in"> <!-- Replace with your actual domain -->
     <meta property="twitter:title" content="Casa de Español India - Learn Spanish with a Master Mentor">
     <meta property="twitter:description" content="Immersive Spanish language courses in Calicut, Kerala, mentored by expert Sayyed Mashur Hudawi.">
-    <meta property="twitter:image" content="https://i.ibb.co/6cMDqWfX/Snap-Insta-to-491459785_2949258905241641-7251993726899143738-n.jpg"> <!-- A good preview image -->
+    <meta property="twitter:image" content="https://i.ibb.co/6cMDqWfX/Snap-Insta-to-491459785-2949258905241641-7251993726899143738-n.jpg"> <!-- A good preview image -->
     
     <!-- Favicon Links for Various Devices -->
     <link rel="apple-touch-icon" sizes="57x57" href="https://i.ibb.co/rG4fjSzf/apple-icon-57x57.png">
@@ -51,7 +51,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlroMTO11W3z5zK2hL/6+iH4sQ/aL4J4rTzV4+cR/q6fB7A5P0b0z/2rD3b3h3e/1Q6b5f5e/9F8x/0Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         /* Custom styles for animations and aesthetics */
@@ -81,32 +81,41 @@
         /* Hero Image Container adjustment */
         .hero-image-container {
             position: relative;
-            height: 100%;
-            overflow: hidden; /* This will hide the parts of the image that extend beyond the container */
+            height: 100%; /* Ensure container takes full height of its grid cell */
+            overflow: hidden;
+            display: flex; /* Use flex to help center the image vertically if needed */
+            justify-content: center; /* Center horizontally */
+            align-items: flex-end; /* Align to the bottom */
         }
         
         .hero-image {
-            position: absolute;
-            bottom: -5%; /* Adjust this value to hide the bottom cut-off */
-            left: 50%;
-            transform: translateX(-50%);
-            width: auto;
-            max-width: none; /* Allow image to be wider than container to scale properly */
-            height: 110%; /* Scale up the image to hide edges */
+            display: block; /* Remove any inline spacing issues */
+            width: auto; /* Allow image to scale with height */
+            height: 105%; /* Slightly larger to fill potential small gaps from transparency */
+            max-width: none; /* Allow scaling beyond 100% width of container if needed by height */
+            object-fit: contain; /* Make sure the whole image is visible if aspect ratio is too wide */
+            object-position: bottom; /* Position the image to the bottom */
+            position: absolute; /* Needed for bottom positioning */
+            bottom: 0; /* Align to bottom */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for horizontal centering */
         }
 
         @media (max-width: 767px) {
+            .hero-image-container {
+                align-items: center; /* Center image on mobile */
+            }
             .hero-image {
                 position: relative;
+                height: auto;
+                width: 80%; /* Adjust width for mobile */
+                max-width: 100%;
                 bottom: auto;
                 left: auto;
                 transform: none;
-                height: auto;
-                max-width: 80%;
-                margin: 2rem auto 0;
+                object-fit: contain; /* Ensure full person is seen on mobile */
             }
         }
-
 
         .btn-primary {
             background: linear-gradient(135deg, #FF6B6B, #F94F4F);
@@ -366,7 +375,7 @@
                     <!-- Course 1 -->
                     <div class="bg-gradient-to-br from-red-50 to-orange-100 rounded-xl p-8 flex flex-col hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 300ms;">
                         <i class="fas fa-feather-alt text-4xl text-red-500 mb-4"></i>
-                        <h3 class="text-2xl font-bold text-gray-900">Español for Literature Readers</h3>
+                        <h3 class="text-2xl font-bold text-gray-900">Español for Poem Lovers</h3>
                         <p class="mt-4 text-gray-700 flex-grow">Delve into the poetic beauty of Spanish literature. Enhance your vocabulary and appreciation for the language's artistic side.</p>
                         <button class="mt-6 course-button inline-block font-semibold text-red-600 hover:text-red-800 transition-colors" data-course="poems">
                             View Package Details <i class="fas fa-arrow-right ml-1"></i>
@@ -399,7 +408,7 @@
             <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center max-w-3xl mx-auto">
                     <h2 class="text-sm font-bold uppercase text-green-600 tracking-widest fade-in-up">Our Success Stories</h2>
-                    <p class="mt-4 text-3xl sm:text-4xl font-bold text-gray-900 fade-in-up" style="transition-delay: 100ms;">Join Our Community of Learners</p>
+                    <p class="mt-4 text-3xl sm:text-4xl font-bold text-gray-900 fade-in-up" style="transition-delay: 100ms;">Join Our Flourishing Community of Learners</p>
                     <p class="mt-6 text-lg text-gray-600 fade-in-up" style="transition-delay: 200ms;">
                         Hear directly from our students who are embracing the Spanish language and expanding their horizons.
                     </p>
@@ -446,7 +455,7 @@
                     <h2 class="text-sm font-bold uppercase text-white tracking-widest fade-in-up">Visual Journey</h2>
                     <p class="mt-4 text-3xl sm:text-4xl font-bold fade-in-up" style="transition-delay: 100ms;">Inspired by Spanish Moments</p>
                     <p class="mt-6 text-lg text-white/90 fade-in-up" style="transition-delay: 200ms;">
-                        A glimpse into the vibrant contents and engaging activities from Casa de Español , directly from our Instagram and Youtube.
+                        A glimpse into the vibrant culture and engaging activities from Casa de Español and beyond, directly from our Instagram.
                     </p>
                 </div>
                 <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -532,7 +541,7 @@
         <div class="modal-content">
             <button class="close-button" onclick="closeModal('videoModal')">&times;</button>
             <div class="video-container">
-                <iframe id="youtubeVideo" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="youtubeVideo" width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -641,11 +650,17 @@
         }
 
         // --- Video Modal ---
+        // This function is now globally available for the onclick attributes
+        function openVideoModal(videoId) {
+            document.getElementById('youtubeVideo').src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            openModal('videoModal');
+        }
+
+        // Add event listener for the "Experience" section videos as well
         document.querySelectorAll('.video-container[data-video-id]').forEach(container => {
             container.addEventListener('click', () => {
                 const videoId = container.getAttribute('data-video-id');
-                document.getElementById('youtubeVideo').src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-                openModal('videoModal');
+                openVideoModal(videoId); // Reuse the same function
             });
         });
 
